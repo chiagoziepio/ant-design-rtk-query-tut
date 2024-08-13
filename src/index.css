@@ -1,0 +1,40 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+.ant-menu-light .ant-menu-item-selected{
+  background-color:transparent;
+  color: red !important;
+
+}
+.ant-drawer .ant-drawer-header-close-only{
+  display: none;
+}
+.ant-drawer-body{
+  padding: 10px !important;
+}
+label{
+  color: white !important;
+}
+input{
+  @apply bg-transparent border-none outline-none p-3 text-[19px]
+}
+
+.ant-form-item-control-input input::placeholder{
+  color: gray !important;
+  
+}
+.anticon-eye-invisible svg{
+  color: rgba(102, 62, 62, 0.76) !important;
+}
+/* @media (max-width:500px){
+  .nav{
+    display: none !important;
+  }
+} */
