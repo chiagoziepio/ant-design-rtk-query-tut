@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Layout from "./components/Layout";
 import UserTableList from "./components/UserTableList";
+import Products from "./components/Products";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/userdisplaylist" element={<UserTableList/>}/>
+          <Route path ="/products" element ={<Products/>}/>
         
       </Route>
     </Routes>

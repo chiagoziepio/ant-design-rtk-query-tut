@@ -23,6 +23,7 @@ const MobileNav =({isMobile, setiSMobile})=>{
             <NavLink to="/office">Offices</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/login">Login</NavLink>
+            <NavLink to ="/products">Products</NavLink>
             </div>
             
         </div>
@@ -49,6 +50,7 @@ const Nav = () => {
             {label: <Link to= "/office" className='!text-white'>Offices</Link>, key: "office"},
             {label: <Link to= "/dashboard" className='!text-white'>Dashboard</Link>, key: "dashboard"},
             {label: <Link to= "/login" className='!text-white'>Login</Link>, key: "login"},
+            {label: <Link to= "/products" className='!text-white'>Products</Link>, key: "products"},
         ]}
     >
 
