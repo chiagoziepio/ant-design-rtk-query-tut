@@ -1,10 +1,11 @@
-import React from 'react'
-import { Table, Modal } from 'antd'
+import React, { useState } from 'react'
+import { Table, Modal, Input } from 'antd'
 import { useSelector } from "react-redux"
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import { DeleteUser } from '../Utils/features/Users/userSlice'
 import { useDispatch } from 'react-redux'
 const UserTableList = () => {
+    const [isEditing, setIsEditing] = useState(false)
     const UsersList =  useSelector(state=> state.userTable.usersTable)
     const dispatch = useDispatch();
    const deleteUser = (record)=>{
@@ -12,7 +13,7 @@ const UserTableList = () => {
     Modal.confirm({
         title : `Do you want to delete ${record.username}?`,
         okText: "yes",
-
+        
         onOk: ()=>{
             dispatch(DeleteUser(userId))
             
@@ -20,7 +21,7 @@ const UserTableList = () => {
     })
    }
    const editUser = (record)=>{
-
+        setIsEditing(true)
    }
     const userTableSource = UsersList.map(user=>{
         return {
@@ -77,6 +78,15 @@ const UserTableList = () => {
             columns={userTableCol}
             dataSource={userTableSource}
         />
+        <Modal
+            open ={isEditing}
+            title = "Edit User"
+            okText = "Done"
+            onOk={()=>setIsEditing(false)}
+            onCancel={()=>setIsEditing(false)}
+        >
+            <Input placeholder='fullname'/>
+        </Modal>
     </div>
   )
 }

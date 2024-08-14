@@ -33,6 +33,11 @@ input{
 .anticon-eye-invisible svg{
   color: rgba(102, 62, 62, 0.76) !important;
 }
+.ant-pagination-item-link{
+  background-color: white !important;
+  height: 25px;
+  width: 25px;
+}
 /* @media (max-width:500px){
   .nav{
     display: none !important;
