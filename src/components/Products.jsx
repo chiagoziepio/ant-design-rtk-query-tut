@@ -114,12 +114,16 @@ weight
           ) : (
             <div className="flex flex-wrap gap-4">
               {products.map((product) => (
+                
                 <Card key={product.id} className="w-fit h-fit !p-2">
                   <div>
+                  <Link to = {`/products/${product.id}`}>
                     <img
-                      src={product.images[0]}
-                      className="w-full h-[30%] sm:h-[100px]"
-                    />
+                        src={product.images[0]}
+                        className="w-full h-[30%] sm:h-[100px]"
+                      />
+                  </Link>
+                    
                   </div>
                   <h3 className="text-red-700">{product.title}</h3>
                   <div className="flex justify-between flex-wrap sm:flex-nowrap">
