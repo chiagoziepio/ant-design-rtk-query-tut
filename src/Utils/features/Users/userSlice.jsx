@@ -17,7 +17,8 @@ export const userSlice = createSlice({
                 id: nanoid(),
                 name: action.payload.fullname,
                 username: action.payload.username,
-                dob
+                dob,
+                cartItems : [],
             }
             state.usersTable.push(newUser)
             

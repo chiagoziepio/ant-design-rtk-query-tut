@@ -10,7 +10,7 @@ body{
 }
 .ant-menu-light .ant-menu-item-selected{
   background-color:transparent;
-  color: red !important;
+  text-decoration: underline;
 
 }
 .ant-drawer .ant-drawer-header-close-only{

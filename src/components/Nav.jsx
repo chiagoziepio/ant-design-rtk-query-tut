@@ -22,8 +22,10 @@ const MobileNav =({isMobile, setiSMobile})=>{
             <div className='flex flex-col gap-x-4 h-full'>
             <NavLink to="/office">Offices</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink to="/register">Register</NavLink>
             <NavLink to="/login">Login</NavLink>
             <NavLink to ="/products">Products</NavLink>
+            <NavLink to ="/userdisplaylist">UsersTable</NavLink>
             </div>
             
         </div>
@@ -49,8 +51,10 @@ const Nav = () => {
         items={[
             {label: <Link to= "/office" className='!text-white'>Offices</Link>, key: "office"},
             {label: <Link to= "/dashboard" className='!text-white'>Dashboard</Link>, key: "dashboard"},
+            {label: <Link to= "/register" className='!text-white'>Register</Link>, key: "register"},
             {label: <Link to= "/login" className='!text-white'>Login</Link>, key: "login"},
             {label: <Link to= "/products" className='!text-white'>Products</Link>, key: "products"},
+            {label: <Link to= "/userdisplaylist" className='!text-white'>UsersTable</Link>, key: "userTable"},
         ]}
     >
 

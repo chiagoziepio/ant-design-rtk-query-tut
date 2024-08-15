@@ -1,12 +1,15 @@
 import { ShopOutlined } from "@ant-design/icons";
-import { Button, Card } from "antd";
-import React from "react";
+import { Button, Card, DatePicker, Input, Modal } from "antd";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import dayjs from "dayjs";
 
 const SpecificProducts = () => {
   const products = useSelector((state) => state.products.products);
+  const [isOdering , setIsOdering] = useState(false)
 
+  
   const { id } = useParams();
   const numberfiedId = Number(id);
   const viewedProduct = products.filter(
@@ -22,7 +25,7 @@ const SpecificProducts = () => {
         {viewedProduct.length ? (
           <div>
             {viewedProduct.map((product) => (
-              <Card className=" w-[95%] sm:w-[600px] h-fit">
+              <Card className=" w-[95%] sm:w-[600px] h-fit" key={product.id}>
                 <div className="flex justify-between">
                   <h4 className=" font-bold">Brand: {product?.brand}</h4>
                   <span className="text-[20px]">
@@ -41,9 +44,25 @@ const SpecificProducts = () => {
                     <p>Stock:  <span className={product.availabilityStatus === "Low Stock" ? "text-red-500" : "text-black"}>{product.availabilityStatus}</span></p>
                 </div>
                   <p className="mt-3">{product.description}</p>
-                  <Button className="ml-[40%] mt-3">Add to cart <ShopOutlined className="text-red-700"/></Button>
+                  <Button className="ml-[40%] mt-3" onClick={()=> setIsOdering(true)}>Add to cart <ShopOutlined className="text-red-700"/></Button>
               </Card>
             ))}
+            
+              <Modal
+                title = "Delivery details"
+                onCancel={()=>setIsOdering(false)}
+                onOk={()=>setIsOdering(false)}
+                open = {isOdering}
+              >
+                <Input 
+                  placeholder="delivery address"
+                />
+                <div>
+                  <p>Your preferred delivery date</p>
+                  <DatePicker  />
+                </div>
+              </Modal>
+           
           </div>
         ) : (
           <p>{id} is invalid</p>
