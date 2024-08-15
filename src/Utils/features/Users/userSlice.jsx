@@ -18,6 +18,7 @@ export const userSlice = createSlice({
                 name: action.payload.fullname,
                 username: action.payload.username,
                 dob,
+                email : action.payload.email,
                 cartItems : [],
             }
             state.usersTable.push(newUser)
